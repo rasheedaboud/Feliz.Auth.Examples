@@ -113,4 +113,4 @@ I would recommend using redirect request. The popup request does not work well o
 
 ```
 
-7.	With all that done you should now be able to run ‘npm run start’. Navigate to ‘https://localhost:8080/’ and you should see the following:
+7.	With all that done you should now be able to run ‘npm run start’. Navigate to ‘https://localhost:8080/’ and you should see the unauthenticated message asking you to login.
