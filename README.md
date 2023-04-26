@@ -73,7 +73,7 @@ root.render(
 I would recommend using redirect request. The popup request does not work well on mobile devices in my experience. 
 
 ```F#
-/// <summary>
+    /// <summary>
     /// A stateful React component that maintains a counter
     /// </summary>
     [<ReactComponent>]
