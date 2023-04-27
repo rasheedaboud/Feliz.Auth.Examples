@@ -26,7 +26,7 @@ export default defineConfig({
 });
 
 ```
-3.	Cd into src directory and run ‘femto install Feliz.React.Msal’. Verify  "@azure/msal-react" and "@azure/msal-browser" were installed into package.json. If not add them ‘npm i @azure/msal-browser @azure/msal-react’.
+3.	Cd into src directory and run `femto install Feliz.React.Msal`. Verify  `@azure/msal-react` and `@azure/msal-browser` were installed into package.json. If not add them ```npm i @azure/msal-browser @azure/msal-react```.
 4.	In ‘main.fs’ add following code and open ‘Feliz.React.Msal’
 5.	Update the required ‘clientId’, ‘authority’ and ‘knownAuthority’ with values from your config. 
 
@@ -39,7 +39,7 @@ importAll "@azure/msal-react"
 importAll "@azure/msal-browser"
 
 //Azure Ad Example
-let config = {
+let adConfig = {
   auth: {
     authority: 'https://login.microsoftonline.com/common',
     clientId: '<Client ID>',
@@ -48,7 +48,7 @@ let config = {
   cache={cacheLocation="sessionStorage"; storeAuthStateInCookie=false}
 };
 //Azure AD B2C Example
-let msalConfig ={
+let b2cConfig ={
     auth={
             clientId='<Client ID>'
             authority="https://<domain>.b2clogin.com/<domain>.onmicrosoft.com/<Sign in flow>"
@@ -57,6 +57,9 @@ let msalConfig ={
             postLogoutRedirectUri = "https://localhost:8080/"};
     cache={cacheLocation="sessionStorage"; storeAuthStateInCookie=false}
     }
+//let client:IPublicClientApplication = createClient adConfig    
+let client:IPublicClientApplication = createClient b2cConfig  
+
 root.render(
         MsalProvider.create[
             MsalProvider.instance client
